@@ -1,0 +1,47 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Parceiro",
+    "version": "1.0",
+    "description": "Pombo-correio para comunicações transacionais da Buser"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8000/"
+    }
+  ],
+  "paths": {
+    "/healthcheck": {
+      "get": {
+        "summary": "Endpoint pra checar saúde do serviço",
+        "operationId": "core.views.healthcheck",
+        "description": "50 próximos grupos do parceiro",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "blah"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+        "Groups": {
+          "properties": {
+            "grupo": {
+              "type": "string",
+              "example": "blah"
+            }
+          }
+        }
+    }
+  }
+}
